@@ -23,7 +23,7 @@ class SteamItemPricesServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($configPath, 'braseidon.steam-item-prices');
         $this->publishes([$configPath => config_path('braseidon.steam-item-prices.php')], 'config');
 
-        $this->app->bindShared('braseidon.steam-item-prices', function ($app) {
+        $this->app->singleton('braseidon.steam-item-prices', function ($app) {
             return new ItemPrices($app->make('Illuminate\Cache\CacheManager'));
         });
 
