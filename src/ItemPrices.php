@@ -41,7 +41,7 @@ class ItemPrices
      * @param  bool    $onlyPrice Return only the lowest price
      * @return stdClass
      */
-    public function getPrice($appId, $itemName, $onlyPrice = false)
+    public function getPrice($appId = 730, $itemName, $onlyPrice = false)
     {
         $cacheKey = 'steamprice.item.' . str_slug($itemName);
 
@@ -50,7 +50,7 @@ class ItemPrices
             $data = $this->cache->get($cacheKey);
         } else {
             // Grab the item price and cache it
-            $url = $this->getItemPriceUrl($itemName);
+            $url = $this->getItemPriceUrl($itemName, $appId);
 
             // No result
             if (! $json = @file_get_contents($url)) {
