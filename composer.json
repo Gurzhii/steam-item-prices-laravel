@@ -1,5 +1,5 @@
 {
-    "name": "Gurzhii/steam-item-prices-laravel",
+    "name": "gurzhii/steam-item-prices-laravel",
     "description": "This package uses the Steam API (requires dev key) to check prices for game items, like in Counter-Strike: Global Offensive. This is a Laravel 5 based package.",
     "type": "library",
     "keywords": ["steam", "api", "item", "prices", "wrapper", "json", "php", "laravel"],
